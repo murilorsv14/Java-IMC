@@ -3,9 +3,14 @@ package defaultPackage;
 public class Diagnostico implements DiagnosticoMedico{
 
   private String medico;
+  private String paciente;
+  private String horario;
 
-  Diagnostico(String medico) {
+  Diagnostico(String medico, String paciente, String horario) {
     this.medico = medico;
+    this.paciente= paciente;
+    this.horario = horario;
+    
   }
   public static void main(String[] args) {
     Calculadora MinhaAvaliacao = new Calculadora();
@@ -33,6 +38,6 @@ public class Diagnostico implements DiagnosticoMedico{
 
     @Override
     public void stopDiagnostic() {
-      System.out.println("Acabou tudo");
+      System.out.format("Medico %s atendeu paciente %s as %s", medico, paciente, horario);
     }
 }
